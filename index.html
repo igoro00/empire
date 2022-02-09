@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+      }
+      body {
+        min-width: 640px;
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 0;
+      }
+      canvas {
+        width: 640px;
+        height: 480px;
+        image-rendering: pixelated;
+      }
+      pre {
+        font-size: larger;
+      }
+    </style>
+    <pre id="fps"></pre>
+    <canvas id="canvas"></canvas>
+    <input type="color" id="newPersonColor" value="#ff0000">
+    <script>
+      /**
+       * Returns a number whose value is limited to the given range.
+       *
+       * Example: limit the output of this computation to between 0 and 255
+       * (x * 255).clamp(0, 255)
+       *
+       * @param {Number} min The lower boundary of the output range
+       * @param {Number} max The upper boundary of the output range
+       * @returns A number in the range [min, max]
+       * @type Number
+       */
+      Number.prototype.clamp = function (min, max) {
+        return Math.min(Math.max(this, min), max);
+      };
+    </script>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
